@@ -7,9 +7,12 @@ import UserListing from './pages/UserListing';
 import PostListing from './pages/PostListing';
 import LoginPage from './pages/LoginPage';
 
+import { ThemeProvider } from './ThemeContext';
+
 function App() {
   return (
-    <Router>
+    <ThemeProvider>
+      <Router>
       
       <Routes>
         <Route path="/" element={<LoginPage />} />
@@ -18,6 +21,7 @@ function App() {
         <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
+    </ThemeProvider>
   );
 }
 
