@@ -2,7 +2,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import KPICard from '../components/KPICard';
-import Navbar from './components/Navbar';
 
 
 function Home() {
@@ -12,8 +11,6 @@ function Home() {
   const recentPosts = JSON.parse(localStorage.getItem('posts') || '[]').filter(post => post.recent).length;
 
   return (
-    <>
-    <Navbar/>
     <Grid container spacing={3} padding={3}>
       <Grid item xs={12} sm={6} md={3}>
         <KPICard title="Total Users" value={totalUsers} />
@@ -28,7 +25,6 @@ function Home() {
         <KPICard title="Posts Published in the Last 24 Hours" value={recentPosts} />
       </Grid>
     </Grid>
-    </>
   );
 }
 
