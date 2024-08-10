@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TablePagination } from '@mui/material';
 import KPICard from '../components/KPICard';
+import Navbar from '../components/Navbar';
+
 
 function PostListing() {
   const [posts, setPosts] = useState([]);
@@ -38,6 +40,8 @@ function PostListing() {
   const recentPosts = posts.filter(post => post.recent).length;
 
   return (
+    <>
+    <Navbar />
     <Grid container spacing={3} padding={3} style={{ maxHeight: '100vh', overflow: 'auto' }}>
       <Grid item xs={12} sm={6}>
         <KPICard title="Total Posts" value={totalPosts} />
@@ -82,6 +86,7 @@ function PostListing() {
         </TableContainer>
       </Grid>
     </Grid>
+    </>
   );
 }
 

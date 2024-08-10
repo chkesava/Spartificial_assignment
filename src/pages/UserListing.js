@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TablePagination } from '@mui/material';
 import KPICard from '../components/KPICard';
+import Navbar from '../components/Navbar';
+
 
 function UserListing() {
   const [users, setUsers] = useState([]);
@@ -36,6 +38,8 @@ function UserListing() {
   const activeUsers = users.filter(user => user.active).length;
 
   return (
+    <>
+    <Navbar/>
     <Grid container spacing={3} padding={3} style={{ maxHeight: '100vh', overflow: 'auto' }}>
       <Grid item xs={12} sm={6}>
         <KPICard title="Total Users" value={totalUsers} />
@@ -82,6 +86,7 @@ function UserListing() {
         </TableContainer>
       </Grid>
     </Grid>
+    </>
   );
 }
 

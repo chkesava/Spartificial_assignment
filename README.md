@@ -20,6 +20,5 @@
 - Material-UI
 - React Router
 
-## Video Demo
 
 
